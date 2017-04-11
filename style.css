@@ -16,8 +16,34 @@ body {
 #salmon-one {
   height: 50%;
   width: 50%;
+  float: left;
+  margin-left: 20%;
 }
 
 h2 {
+  float: left;
   font-family: 'Nunito Sans', sans-serif;
+  color: gray;
+  font-size: 60px;
+}
+
+h1 {
+  float: left;
+  font-family: arial;
+  color: red;
+  text-align: center;
+}
+
+p {
+  float: left;
+  font-family: Georgia;
+  color: yellow;
+  text-indent: 50px;
+}
+
+li {
+  border-style: solid;
+  width: 20%;
+  font-size: 200%;
+  text-align: center;
 }
