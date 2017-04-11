@@ -15,8 +15,7 @@ var maxPike = firstAndPike.maxHourly;
 function custHour(min, max) {
   console.log(min);
   console.log(max);
-//  min = Math.ceil(min);
-  // max = Math.floor(max);
+
   var total = Math.floor(Math.random() * (max - min) ) + min;
   return Math.floor(total);
 }
