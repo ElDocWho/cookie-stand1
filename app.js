@@ -10,14 +10,16 @@ function Store(storeName,minHourly,maxHourly,avgSalesPersonStore) {
   this.numCookies = [];
   this.avgSalesPersonStore = avgSalesPersonStore;
 }
+
+
 Store.prototype.custHour = function() {
   var total = Math.floor(Math.random() * (this.maxHourly - this.minHourly) ) + this.minHourly;
   return Math.floor(total);
 };
+
 Store.prototype.addNumCookies = function () {
-  for (var x = 0; x < 14; x++) {
-    pike.custHour();
-    this.numCookies.push(pike.custHour());
+  for (var x = 0; x < this.storeHours.length; x++) {
+    this.numCookies.push(this.custHour());
   }
 };
 
@@ -30,8 +32,8 @@ Store.prototype.createDates = function() {
   header.textContent = '';
   tableRow.appendChild(header);
 
-  for (var i = 0;i < 14; i++) {
-    var fecha = document.createElement('td');
+  for (var i = 0;i < this.storeHours.length; i++) {
+    var fecha = document.createElement('th');
     fecha.textContent = this.storeHours[i];
     tableRow.appendChild(fecha);
     tableBox.appendChild(tableRow);
@@ -50,13 +52,13 @@ Store.prototype.createTable = function() {
   tableRow.appendChild(header);
 
 
-  for (var i = 0;i < 14; i++) {
+  for (var i = 0;i < this.storeHours.length; i++) {
     var horas = document.createElement('td');
     horas.textContent = this.numCookies[i];
     tableRow.appendChild(horas);
-    tableBox.appendChild(tableRow);
-    app.appendChild(tableBox);
   }
+  tableBox.appendChild(tableRow);
+  app.appendChild(tableBox);
 
 //  return tableBox;
 
