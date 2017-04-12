@@ -51,3 +51,23 @@ li {
 * {
   border: 5px solid black;
 }
+
+
+table {
+   table-layout: fixed;
+  }
+td {
+  width: 33%;
+ }
+
+#wrap {
+  border-radius: 25px;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 15%
+
+}
+
+#wrap :hover {
+background-color: red;
+}

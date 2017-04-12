@@ -1,11 +1,10 @@
 'use strict';
 
-var horas, fecha, c = 1;
 var app = document.getElementById('wrap');
 
 function Store(storeName,minHourly,maxHourly,avgSalesPersonStore) {
   this.name = storeName;
-  this.storeHours = ['','6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
+  this.storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
   this.minHourly = minHourly;
   this.maxHourly = maxHourly;
   this.numCookies = [];
@@ -22,30 +21,38 @@ Store.prototype.addNumCookies = function () {
   }
 };
 
-Store.prototype.createTable = function(){
+Store.prototype.createDates = function() {
 
   var tableBox = document.createElement('table');
   var header = document.createElement('th');
   var tableRow = document.createElement('tr');
-  var tableColumn = document.createElement('td');
+
+  header.textContent = '';
+  tableRow.appendChild(header);
+
+  for (var i = 0;i < 14; i++) {
+    var fecha = document.createElement('td');
+    fecha.textContent = this.storeHours[i];
+    tableRow.appendChild(fecha);
+    tableBox.appendChild(tableRow);
+    app.appendChild(tableBox);
+  }
+
+};
+
+Store.prototype.createTable = function() {
+
+  var tableBox = document.createElement('table');
+  var header = document.createElement('th');
+  var tableRow = document.createElement('tr');
+
   header.textContent = this.name;
   tableRow.appendChild(header);
 
 
-  var tableRow1 = document.createElement('tr');
-  for (i = 0;i < 15 && c === 1 ; i++) {
-    fecha = document.createElement('td');
-    fecha.textContent = this.storeHours[i];
-    console.log(fecha);
-    tableRow1.appendChild(fecha);
-    tableBox.appendChild(tableRow1);
-    app.appendChild(tableBox);
-  }
-  c = 0;
-  for (var i = 0;i < 16; i++) {
-    horas = document.createElement('td');
+  for (var i = 0;i < 14; i++) {
+    var horas = document.createElement('td');
     horas.textContent = this.numCookies[i];
-    console.log(this.numCookies[i]);
     tableRow.appendChild(horas);
     tableBox.appendChild(tableRow);
     app.appendChild(tableBox);
@@ -56,8 +63,8 @@ Store.prototype.createTable = function(){
 };
 
 
-
 var pike = new Store('1st and Pike',23,65,6.3);
+pike.createDates();
 pike.addNumCookies();
 pike.createTable();
 var seaTac = new Store('Seatac Airport',3,24,1.2);
