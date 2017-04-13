@@ -70,7 +70,7 @@ Store.prototype.createTable = function() {
   tableBox.appendChild(tableRow);
   app.appendChild(tableBox);
 
-//  return tableBox;
+//  return tableBox; working without it.
 
 };
 
@@ -93,3 +93,27 @@ capitolHill.createTable();
 var alki = new Store('Alki',2,16,4.6);
 alki.addNumCookies();
 alki.createTable();
+
+var elStoreForm = document.getElementById('newStoreForm');
+
+function submitButton(event) {
+  event.preventDefault();
+  var newStoreForm = event.target;
+  var strLoc = event.target.storeLocation;
+  var minCst = event.target.minimumCustomers;
+  var maxCst = event.target.maximumCustomers;
+  var avgCook = event.target.averageCookies;
+  if (minCst > maxCst) {
+    alert('Not valid input values!!!!');
+  } else {
+    var formVariables = new CreateStore(strLoc.value, minCst.value, maxCst.value, avgCook.value);
+    formVariables.generateTableRow();
+    var tfoot = document.getElementById('tableFoot');
+    var totalsRow = document.getElementById('totalsRow');
+    tfoot.removeChild(totalsRow);
+    hourlyStoresTotal();
+  }
+  elStoreForm.reset();
+}
+
+elStoreForm.addEventListener('submit',submitButton);
