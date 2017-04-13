@@ -10,11 +10,8 @@
 
   <fieldset>
         <form id="newStoreForm" action="sales.html" method="get">
-          <p id="parrafo" >If you would like to add a store, enter it here.</p>
           <ul class="tableul">
-            <li class="tablelineitems">
-              <input class="submit" type="submit" name="submitFields" value="Submitt new store info">
-            </li>
+            <label id="parrafo" >If you would like to add a store, enter it here:</label>
             <li class="tablelineitems">
               <label class="labels" for="storeLocation">Store Location: </label>
               <input class="input" type="text" required name="storeLocation" placeholder="Jose Cookie Store" maxlength="25">
@@ -32,6 +29,9 @@
             <li class="tablelineitems">
               <label class="labels" for="averageCookies">Average Cookies Purchased Per Customer: </label>
               <input class="input" type="number" required step="1" name="averageCookies" max="20" min="1">
+            </li>
+            <li class="tablelineitems">
+              <input class="submit" type="submit" name="submitFields" value="Submitt new store info">
             </li>
 
             </ul>

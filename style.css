@@ -44,14 +44,16 @@ p {
 li {
   border-style: solid;
   width: 20%;
-  font-size: 200%;
+  font-size: 50%;
   text-align: center;
 }
 
 * {
   border: 5px solid black;
 }
-
+html, body {
+  height: 100%
+}
 
 table {
    table-layout: fixed;
@@ -64,10 +66,44 @@ td {
   border-radius: 25px;
   width: 80%;
   margin-left: 10%;
-  margin-top: 15%
+  margin-top: 2%;
 
 }
 
 #wrap :hover {
 background-color: red;
+}
+fieldset * {
+  border: none;
+  height: 20%;
+}
+body, html{
+  border: none;
+}
+li {
+  font-size: 150%;
+  margin-left: 40%;
+  padding: 0;
+}
+
+fieldset {
+  border: none;
+}
+#parrafo {
+  margin-left: 31%;
+  font-size: 200%;
+  color: blue;
+  width: auto;
+  height: auto;
+  background-color: black;
+  border-radius: 25px;
+  margin-top: 5%;
+}
+input {
+  font-size: 110%;
+}
+.submit {
+  margin-top: 5%;
+  width: 140%;
+  margin-left: -20%;
 }

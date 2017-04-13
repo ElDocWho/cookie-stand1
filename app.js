@@ -98,11 +98,11 @@ var elStoreForm = document.getElementById('newStoreForm');
 
 function submitButton(event) {
   event.preventDefault();
-  var newStoreForm = event.target;
-  var strLoc = event.target.storeLocation;
-  var minCst = event.target.minimumCustomers;
-  var maxCst = event.target.maximumCustomers;
-  var avgCook = event.target.averageCookies;
+  var form = event.target;
+  var storLoc = form.storeLocation.value;
+  var minCst = form.minimumCustomers.value;
+  var maxCst = form.maximumCustomers.value;
+  var avgCook = form.averageCookies.value;
   if (minCst > maxCst) {
     alert('Not valid input values!!!!');
   } else {
