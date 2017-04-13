@@ -4,7 +4,7 @@ var app = document.getElementById('wrap');
 
 function Store(storeName,minHourly,maxHourly,avgSalesPersonStore) {
   this.name = storeName;
-  this.storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
+  this.storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm','Totals'];
   this.minHourly = minHourly;
   this.maxHourly = maxHourly;
   this.numCookies = [];
@@ -33,12 +33,14 @@ Store.prototype.createDates = function() {
   tableRow.appendChild(header);
 
   for (var i = 0;i < this.storeHours.length; i++) {
-    var fecha = document.createElement('th');
+    var fecha = document.createElement('td');
     fecha.textContent = this.storeHours[i];
     tableRow.appendChild(fecha);
     tableBox.appendChild(tableRow);
     app.appendChild(tableBox);
   }
+
+
 
 };
 
@@ -47,22 +49,32 @@ Store.prototype.createTable = function() {
   var tableBox = document.createElement('table');
   var header = document.createElement('th');
   var tableRow = document.createElement('tr');
+  var storeTotals= 0;
 
   header.textContent = this.name;
   tableRow.appendChild(header);
 
 
-  for (var i = 0;i < this.storeHours.length; i++) {
+  for (var i = 0;i < (this.storeHours.length - 1); i++) {
     var horas = document.createElement('td');
     horas.textContent = this.numCookies[i];
     tableRow.appendChild(horas);
+    storeTotals = storeTotals + this.numCookies[i];
+    console.log(storeTotals);
   }
+
+  horas = document.createElement('td');
+  horas.textContent = storeTotals;
+  tableRow.appendChild(horas);
+
   tableBox.appendChild(tableRow);
   app.appendChild(tableBox);
 
 //  return tableBox;
 
 };
+
+
 
 
 var pike = new Store('1st and Pike',23,65,6.3);
