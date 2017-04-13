@@ -47,3 +47,27 @@ li {
   font-size: 200%;
   text-align: center;
 }
+
+* {
+  border: 5px solid black;
+}
+
+
+table {
+   table-layout: fixed;
+  }
+td {
+  width: 33%;
+ }
+
+#wrap {
+  border-radius: 25px;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 15%
+
+}
+
+#wrap :hover {
+background-color: red;
+}
