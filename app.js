@@ -70,7 +70,7 @@ Store.prototype.createTable = function() {
   tableBox.appendChild(tableRow);
   app.appendChild(tableBox);
 
-//  return tableBox;
+//  return tableBox; working without it. 
 
 };
 
