@@ -205,18 +205,12 @@ li {
   height: 10%;
   width: 10%;
   border: none;
-  animation:
-    pulse 3s ease infinite alternate,
-    nudge 5s linear infinite alternate;
 }
 #salmon-2 {
   float: right;
   height: 10%;
   width: 10%;
   border: none;
-  animation:
-    pulse 3s ease infinite alternate,
-    nudge 5s linear infinite alternate;
 }
 
 .figuras {
