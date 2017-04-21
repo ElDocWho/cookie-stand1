@@ -6,7 +6,8 @@
     <title>Pat's Salmon Cookies</title>
   </head>
   <body>
-  <div id="wrap"></div>
+  <img id="salmon-1" src="img/salmon.png" alt="Salmon Pic" >
+  <img id="salmon-2" src="img/salmon.png" alt="Salmon Pic" >
 
   <fieldset>
         <form id="newStoreForm" action="sales.html" method="get">
@@ -18,17 +19,17 @@
             </li>
             <li class="tablelineitems">
               <label class="labels" >Maximum Number Of Customers Per Hour: </label>
-              <input class="input" type="number" name="maximumCustomers" max="200" min="0">
+              <input class="input" type="number" name="maximumCustomers" max="200" min="0" placeholder="Max Number 200">
             </li>
 
             <li class="tablelineitems">
               <label class="labels" >Minimum Number Of Customers Per Hour: </label>
-              <input class="input" type="number" name="minimumCustomers" max="200" min="0">
+              <input class="input" type="number" name="minimumCustomers" max="200" min="0" placeholder="Max Number 200">
             </li>
 
             <li class="tablelineitems">
               <label class="labels" >Average Cookies Purchased Per Customer: </label>
-              <input class="input" type="number" name="averageCookies" max="20" min="1">
+              <input class="input" type="number" name="averageCookies" max="20" min="1" placeholder="Max 20 Min 1">
             </li>
 
             <li class="tablelineitems">
@@ -37,6 +38,7 @@
           </ul>
           </form>
         </fieldset>
+        <div id="wrap"></div>
 
 
     <script type="text/javascript" src="app.js"></script>

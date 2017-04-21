@@ -13,6 +13,7 @@ body {
   background-image: url(img/beach.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  background-color: lightblue;
 
 }
 
@@ -27,7 +28,7 @@ body {
 h2 {
   float: left;
   font-family: 'Nunito Sans', sans-serif;
-  color: gray;
+  color: black;
   font-size: 60px;
 }
 
@@ -89,7 +90,7 @@ body, html{
 }
 li {
   font-size: 130%;
-  margin-left: 40%;
+  margin-left: 30%;
   padding: 0;
 }
 
@@ -97,8 +98,8 @@ fieldset {
   border: none;
 }
 #parrafo {
-  margin-left: 23%;
-  font-size: 200%;
+  margin-left: 35%;
+  font-size: 150%;
   color: blue;
   width: auto;
   height: auto;
@@ -142,16 +143,21 @@ input {
   }
 
   50% {
-    transform: translate(150px, 0);
+    transform: translate(600px, 0);
   }
 
   80% {
-    transform: translate(-150px, 0);
+    transform: translate(-600px, 0);
   }
 }
 
 h2 {
   border: none;
+}
+#nato {
+  text-align: right;
+  padding-bottom: 2%;
+  padding-right: 2%;
 }
 
 p {
@@ -191,4 +197,46 @@ header {
 }
 li {
   padding: 0;
+  width: 40%;
+  text-align: center;
+}
+#salmon-1 {
+  float: left;
+  height: 10%;
+  width: 10%;
+  border: none;
+  animation:
+    pulse 3s ease infinite alternate,
+    nudge 5s linear infinite alternate;
+}
+#salmon-2 {
+  float: right;
+  height: 10%;
+  width: 10%;
+  border: none;
+  animation:
+    pulse 3s ease infinite alternate,
+    nudge 5s linear infinite alternate;
+}
+
+.figuras {
+  float: left;
+  width: 40%;
+  height: 60%;
+  display: inline-block;
+  margin-bottom: 5%;
+  padding: 2%;
+  background-color: cyan;
+}
+.rollo {
+  text-align: center;
+  float: right;
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  margin-bottom: 5%;
+  font-size: 30px;
+  padding: 10%;
+  font-weight: bold;
+
 }
