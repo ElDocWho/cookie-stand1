@@ -1,6 +1,7 @@
 'use strict';
 
 var app = document.getElementById('wrap');
+var elStoreForm = document.getElementById('newStoreForm');
 
 function Store(storeName,minHourly,maxHourly,avgSalesPersonStore) {
   this.name = storeName;
@@ -60,7 +61,6 @@ Store.prototype.createTable = function() {
     horas.textContent = this.numCookies[i];
     tableRow.appendChild(horas);
     storeTotals = storeTotals + this.numCookies[i];
-    console.log(storeTotals);
   }
 
   horas = document.createElement('td');
@@ -94,26 +94,20 @@ var alki = new Store('Alki',2,16,4.6);
 alki.addNumCookies();
 alki.createTable();
 
-var elStoreForm = document.getElementById('newStoreForm');
-
-function submitButton(event) {
+var submitButton = function(event) {
   event.preventDefault();
-  var newStoreForm = event.target;
-  var strLoc = event.target.storeLocation;
-  var minCst = event.target.minimumCustomers;
-  var maxCst = event.target.maximumCustomers;
-  var avgCook = event.target.averageCookies;
-  if (minCst > maxCst) {
+  var form = event.target;
+  var storeLocation = form.storeLocation.value;
+  var minimumCustomers = form.minimumCustomers.value;
+  var maximumCustomers = form.maximumCustomers.value;
+  var averageCookies = form.averageCookies.value;
+  if (minimumCustomers > maximumCustomers) {
     alert('Not valid input values!!!!');
   } else {
-    var formVariables = new CreateStore(strLoc.value, minCst.value, maxCst.value, avgCook.value);
-    formVariables.generateTableRow();
-    var tfoot = document.getElementById('tableFoot');
-    var totalsRow = document.getElementById('totalsRow');
-    tfoot.removeChild(totalsRow);
-    hourlyStoresTotal();
+    var formVariables = new Store(storeLocation, minimumCustomers, maximumCustomers, averageCookies);
+    formVariables.addNumCookies();
+    formVariables.createTable();
+    form.reset();
   }
-  elStoreForm.reset();
-}
-
+};
 elStoreForm.addEventListener('submit',submitButton);
