@@ -104,7 +104,7 @@ fieldset {
   height: auto;
   background-color: black;
   border-radius: 25px;
-  margin-top: 5%;
+  margin-top: 2%;
 }
 input {
   font-size: 110%;
@@ -188,4 +188,7 @@ header {
 }
 #bar {
   background-color: yellow;
+}
+li {
+  padding: 0;
 }
